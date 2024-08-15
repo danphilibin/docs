@@ -14,8 +14,11 @@
 			"post": {
 				"parameters": [],
 				"operationId": "public_posts_post",
+				"summary": "Create a post",
+				"description": "Creates a new post in Campsite.",
 				"responses": {
 					"200": {
+						"description": "Successful operation",
 						"content": {
 							"application/json": {
 								"schema": {

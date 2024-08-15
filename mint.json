@@ -2,14 +2,15 @@
 	"$schema": "https://mintlify.com/schema.json",
 	"name": "Campsite",
 	"logo": {
-		"dark": "/logo/campsite-logo.png",
-		"light": "/logo/campsite-logo.png"
+		"dark": "/campsite-logo.svg",
+		"light": "/campsite-logo.svg",
+		"href": "https://campsite.co"
 	},
-	"favicon": "/favicon.ico",
+	"favicon": "/campsite-icon.png",
 	"colors": {
-		"primary": "#FF671D",
-		"light": "#FF671D",
-		"dark": "#FF3628",
+		"primary": "#FF531B",
+		"light": "#FF531B",
+		"dark": "#FF531B",
 		"anchors": {
 			"from": "#FF671D",
 			"to": "#FF3628"
@@ -25,16 +26,10 @@
 		"name": "Dashboard",
 		"url": "https://dashboard.mintlify.com"
 	},
-	"tabs": [
-		{
-			"name": "API Reference",
-			"url": "api-reference"
-		}
-	],
 	"anchors": [
 		{
 			"name": "API Reference",
-			"openapi": "/schemas/stainless_schema.json",
+			"openapi": "/stainless_schema.json",
 			"url": "api-reference",
 			"icon": "square-terminal"
 		},
@@ -63,14 +58,6 @@
 		{
 			"group": "API Documentation",
 			"pages": ["api-reference/introduction"]
-		},
-		{
-			"group": "Endpoint Examples",
-			"pages": [
-				"api-reference/endpoint/get",
-				"api-reference/endpoint/create",
-				"api-reference/endpoint/delete"
-			]
 		}
 	],
 	"footerSocials": {
