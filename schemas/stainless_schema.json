@@ -1,0 +1,118 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"title": "API",
+		"version": "v1"
+	},
+	"servers": [
+		{
+			"url": "http://localhost:3000"
+		}
+	],
+	"paths": {
+		"/v1/public/posts": {
+			"post": {
+				"parameters": [],
+				"operationId": "public_posts_post",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Post"
+								}
+							}
+						}
+					}
+				},
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/public_posts_post_request"
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"ApiKeyAuth": []
+					}
+				]
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"Post": {
+				"type": "object",
+				"required": [
+					"id",
+					"title",
+					"created_at",
+					"published_at",
+					"url",
+					"content",
+					"project_id"
+				],
+				"properties": {
+					"id": {
+						"type": "string",
+						"properties": {}
+					},
+					"title": {
+						"type": "string",
+						"properties": {}
+					},
+					"created_at": {
+						"type": "string",
+						"properties": {}
+					},
+					"published_at": {
+						"type": "string",
+						"properties": {},
+						"nullable": true
+					},
+					"url": {
+						"type": "string",
+						"properties": {}
+					},
+					"content": {
+						"type": "string",
+						"properties": {}
+					},
+					"project_id": {
+						"type": "string",
+						"properties": {}
+					}
+				}
+			},
+			"public_posts_post_request": {
+				"type": "object",
+				"required": ["content"],
+				"properties": {
+					"title": {
+						"type": "string",
+						"properties": {}
+					},
+					"content": {
+						"type": "string",
+						"properties": {}
+					},
+					"project_id": {
+						"type": "string",
+						"properties": {}
+					}
+				}
+			}
+		},
+		"securitySchemes": {
+			"ApiKeyAuth": {
+				"type": "apiKey",
+				"in": "header",
+				"name": "x-campsite-token"
+			}
+		}
+	}
+}
